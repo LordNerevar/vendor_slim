@@ -125,9 +125,6 @@ rm -rf $REPACK/ota/system/media/video
 # Add precompiled fonts
 #mv -f $REPACK/ota/system/sfont/*.ttf $REPACK/ota/system/fonts/
 
-# No need for tts
-rm -rf $REPACK/ota/system/tts
-
 # No need for srec
 rm -rf $REPACK/ota/system/usr/srec
 
@@ -147,8 +144,6 @@ elif [ "$DEVICELCD" = "320" ]; then
     sed -i 's/ro.sf.lcd_density=320/ro.sf.lcd_density=245/g' $OUT/system/build.prop
 elif [ "$DEVICELCD" = "480" ]; then
     sed -i 's/ro.sf.lcd_density=480/ro.sf.lcd_density=370/g' $OUT/system/build.prop
-elif [ "$DEVICELCD" = "213" ]; then
-    sed -i 's/ro.sf.lcd_density=213/ro.sf.lcd_density=182/g' $OUT/system/build.prop
 fi
 
 # Device specific LCD Density fix
